@@ -80,6 +80,23 @@ function render() {
   if (currentView === 'content') renderContent(); else renderMedia();
 }
 
+function setArchiveView(nextView, syncHash = false) {
+  currentView = nextView === 'media' ? 'media' : 'content';
+  mediaLimit = 48;
+  viewButtons.forEach(item => {
+    const active = item.dataset.archiveView === currentView;
+    item.classList.toggle('active', active);
+    item.setAttribute('aria-selected', String(active));
+  });
+  filter.hidden = currentView === 'media';
+  search.placeholder = currentView === 'media' ? 'Search images and source pages…' : 'Search all club content…';
+  if (syncHash) {
+    const nextUrl = currentView === 'media' ? '#media' : `${location.pathname}${location.search}`;
+    history.replaceState(null, '', nextUrl);
+  }
+  render();
+}
+
 window.renderArchive = render;
 
 fetch('data/content.json')
@@ -95,7 +112,7 @@ fetch('data/content.json')
       if (!record.pages.includes(page.title)) record.pages.push(page.title);
     }));
     media = [...records.values()].sort((a, b) => a.label.localeCompare(b.label));
-    render();
+    setArchiveView(location.hash === '#media' ? 'media' : 'content');
   })
   .catch(() => { meta.textContent = 'The archive could not be loaded. Please open this site through a web server.'; });
 
@@ -104,15 +121,5 @@ search.addEventListener('keyup', render);
 search.addEventListener('change', render);
 filter.addEventListener('change', render);
 moreButton.addEventListener('click', () => { mediaLimit += 48; renderMedia(); });
-viewButtons.forEach(button => button.addEventListener('click', () => {
-  currentView = button.dataset.archiveView;
-  mediaLimit = 48;
-  viewButtons.forEach(item => {
-    const active = item === button;
-    item.classList.toggle('active', active);
-    item.setAttribute('aria-selected', String(active));
-  });
-  filter.hidden = currentView === 'media';
-  search.placeholder = currentView === 'media' ? 'Search images and source pages…' : 'Search all club content…';
-  render();
-}));
+viewButtons.forEach(button => button.addEventListener('click', () => setArchiveView(button.dataset.archiveView, true)));
+addEventListener('hashchange', () => setArchiveView(location.hash === '#media' ? 'media' : 'content'));
