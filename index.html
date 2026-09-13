@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Northampton Judo Club — friendly junior, adult, women’s and groundwork classes. Established 1982. Your first week is free.">
   <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="Northampton Judo Club | Find your feet. Own the mat.">
+  <meta property="og:description" content="Friendly, expert judo coaching in Northampton for ages 5+. Your first week is free.">
+  <meta property="og:image" content="https://0riceisnice0-hash.github.io/Northampton-Judo-Club/assets/images/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://0riceisnice0-hash.github.io/Northampton-Judo-Club/">
   <title>Northampton Judo Club | Judo for every body</title>
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +19,9 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="club-rail" aria-label="Club highlights">
+    <div class="wrap"><span>First week free</span><span>Ages 5+</span><span>BJA affiliated</span><a href="#timetable">Classes Mon–Fri <b>View timetable →</b></a></div>
+  </div>
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="Northampton Judo Club home">
       <img src="assets/images/logo.png" alt="Northampton Judo Club">
@@ -35,7 +43,7 @@
       <div class="hero-photo" role="img" aria-label="Adults practising judo at Northampton Judo Club"></div>
       <div class="hero-shade"></div>
       <div class="hero-content wrap">
-        <p class="eyebrow light">Northampton’s home of judo since 1982</p>
+        <p class="eyebrow light"><span>01</span> Northampton’s home of judo since 1982</p>
         <h1>Find your feet.<br><span>Own the mat.</span></h1>
         <p class="hero-copy">Friendly, expert coaching for complete beginners, returning Judoka and competitors — from age five upwards.</p>
         <div class="hero-actions">
@@ -43,6 +51,7 @@
           <a class="text-link light" href="#classes">Find your class <span>↓</span></a>
         </div>
       </div>
+      <div class="hero-stamp" aria-hidden="true"><span>柔</span><small>The gentle way</small></div>
       <aside class="hero-facts" aria-label="Club highlights">
         <div><strong>40+</strong><span>years in Northampton</span></div>
         <div><strong>5+</strong><span>ages welcome</span></div>
@@ -50,11 +59,14 @@
       </aside>
     </section>
 
-    <section class="proof-strip" aria-label="Club introduction">
-      <div class="wrap proof-inner">
-        <p><strong>No experience.</strong> No special fitness. No pressure.</p>
-        <p>Comfortable clothes are all you need.</p>
-        <a href="mailto:action@northamptonjudo.com?subject=Free%20judo%20trial">Ask about a free trial →</a>
+    <section class="start-strip" aria-labelledby="start-title">
+      <div class="wrap start-grid">
+        <div class="start-intro"><p class="eyebrow">Your first class, sorted</p><h2 id="start-title">Start in three.</h2></div>
+        <ol class="start-steps">
+          <li><b>01</b><div><strong>Pick a class</strong><span>Junior, adult or BJJ — beginners fit right in.</span></div></li>
+          <li><b>02</b><div><strong>Bring yourself</strong><span>Comfortable sports clothes are all you need.</span></div></li>
+          <li><b>03</b><div><strong>Try a week free</strong><span>Meet the coaches and find your rhythm.</span></div></li>
+        </ol>
       </div>
     </section>
 
@@ -92,6 +104,20 @@
       </div>
     </section>
 
+    <section class="dojo-life" aria-labelledby="dojo-life-title">
+      <div class="wrap dojo-life-head">
+        <div><p class="eyebrow light">Life on the mat</p><h2 id="dojo-life-title">Real people.<br>Real progress.</h2></div>
+        <p>Belts mark progress, but the moments between them make the club: the first breakfall, a technique finally clicking, teammates cheering each other on.</p>
+      </div>
+      <div class="photo-reel" aria-label="Northampton Judo Club photo gallery">
+        <figure class="reel-wide"><img src="assets/archive/094f24858b1a-FW8A9508.jpg" alt="Club members applauding a judoka" loading="lazy"><figcaption>Every grade belongs</figcaption></figure>
+        <figure><img src="assets/archive/3058a06a9450-FW8A9578.jpg" alt="Smiling judoka in a blue gi" loading="lazy"><figcaption>Train together</figcaption></figure>
+        <figure><img src="assets/archive/783d913b70ab-FW8A9528.jpg" alt="Coach presenting a belt to a judoka" loading="lazy"><figcaption>Earn every step</figcaption></figure>
+        <figure class="reel-wide"><img src="assets/archive/e6072f76baf8-FW8A9525.jpg" alt="Judoka smiling with a new belt" loading="lazy"><figcaption>Celebrate progress</figcaption></figure>
+      </div>
+      <div class="wrap gallery-link"><a class="text-link light" href="archive.html#media">Explore the club archive — 400+ photos →</a></div>
+    </section>
+
     <section class="section timetable-section" id="timetable">
       <div class="wrap timetable-layout">
         <div class="schedule-intro">
@@ -100,15 +126,23 @@
           <p>New starters are welcome in every regular class. Arrive a little early and introduce yourself to a coach.</p>
           <a class="button white" href="https://buy.stripe.com/4gw6rh62e3tS1a0aEQ">Book your class <span>→</span></a>
         </div>
+        <div class="schedule-wrap">
+          <div class="schedule-filters" aria-label="Filter timetable">
+            <button class="active" type="button" data-schedule-filter="all">All classes</button>
+            <button type="button" data-schedule-filter="junior">Juniors</button>
+            <button type="button" data-schedule-filter="adult">Adults</button>
+            <button type="button" data-schedule-filter="bjj">BJJ</button>
+          </div>
         <div class="schedule" role="table" aria-label="Weekly class timetable">
           <div class="schedule-row head" role="row"><span>Day</span><span>Time</span><span>Class</span></div>
-          <div class="schedule-row" role="row"><strong>MON</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
-          <div class="schedule-row" role="row"><strong>MON</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
-          <div class="schedule-row" role="row"><strong>TUE</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi & No-Gi</small></span></div>
-          <div class="schedule-row" role="row"><strong>THU</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
-          <div class="schedule-row" role="row"><strong>THU</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
-          <div class="schedule-row" role="row"><strong>FRI</strong><time>18:00–19:00</time><span><b>Adult newaza</b><small>Judo groundwork</small></span></div>
-          <div class="schedule-row" role="row"><strong>FRI</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi</small></span></div>
+          <div class="schedule-row" data-class="junior" role="row"><strong>MON</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
+          <div class="schedule-row" data-class="adult" role="row"><strong>MON</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
+          <div class="schedule-row" data-class="bjj" role="row"><strong>TUE</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi & No-Gi</small></span></div>
+          <div class="schedule-row" data-class="junior" role="row"><strong>THU</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
+          <div class="schedule-row" data-class="adult" role="row"><strong>THU</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
+          <div class="schedule-row" data-class="adult" role="row"><strong>FRI</strong><time>18:00–19:00</time><span><b>Adult newaza</b><small>Judo groundwork</small></span></div>
+          <div class="schedule-row" data-class="bjj" role="row"><strong>FRI</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi</small></span></div>
+        </div>
         </div>
       </div>
     </section>
@@ -143,7 +177,7 @@
       <div class="wrap">
         <div class="section-heading split-heading"><div><p class="eyebrow">The Judo Moral Code</p><h2>How we show up.</h2></div><p>These principles guide how we train, compete and treat one another — on and off the tatami.</p></div>
         <div class="values-grid" aria-label="Judo moral code values">
-          <span>Courtesy</span><span>Courage</span><span>Honesty</span><span>Honour</span><span>Modesty</span><span>Respect</span><span>Self-control</span><span>Friendship</span>
+          <span data-jp="礼儀">Courtesy</span><span data-jp="勇気">Courage</span><span data-jp="誠実">Honesty</span><span data-jp="名誉">Honour</span><span data-jp="謙虚">Modesty</span><span data-jp="尊敬">Respect</span><span data-jp="自制">Self-control</span><span data-jp="友情">Friendship</span>
         </div>
       </div>
     </section>
@@ -171,6 +205,14 @@
       </div>
     </section>
 
+    <section class="trust-band" aria-labelledby="trust-title">
+      <div class="wrap trust-grid">
+        <div><p class="eyebrow light">Train with confidence</p><h2 id="trust-title">A safe place to grow.</h2></div>
+        <p>Qualified coaching, clear club standards and dedicated safeguarding support are part of every session.</p>
+        <div class="trust-links"><a href="archive.html#safeguarding">Safeguarding policy →</a><a href="archive.html#club-rules">Club rules →</a><a href="mailto:action@northamptonjudo.com?subject=Safeguarding%20question">Ask a question →</a></div>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div><p class="eyebrow light">Ready when you are</p><h2>Step onto<br>the mat.</h2><p>Your first week is completely free. Send us a message and a friendly coach will help you choose the right class.</p><a class="button red" href="mailto:action@northamptonjudo.com?subject=Free%20judo%20trial">Start your free week <span>→</span></a></div>
@@ -183,6 +225,10 @@
   <footer class="site-footer">
     <div class="wrap footer-grid"><div class="footer-brand"><img src="assets/images/logo.png" alt=""><p>Northampton Judo Club<br><span>Building confidence since 1982.</span></p></div><nav aria-label="Footer"><a href="#classes">Classes</a><a href="#timetable">Timetable</a><a href="archive.html">Full content archive</a><a href="archive.html#safeguarding">Safeguarding</a><a href="archive.html#club-rules">Club rules</a><a href="archive.html#privacy-policy">Privacy</a></nav><p class="copyright">© <span data-year></span> Northampton Judo Club<br>British Judo Association affiliated</p></div>
   </footer>
+  <a class="mobile-book" href="https://buy.stripe.com/4gw6rh62e3tS1a0aEQ">Try a week free <span>→</span></a>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Northampton Judo Club","description":"Friendly judo coaching for juniors and adults in Northampton, established 1982.","url":"https://0riceisnice0-hash.github.io/Northampton-Judo-Club/","email":"action@northamptonjudo.com","address":{"@type":"PostalAddress","streetAddress":"Carlsberg Sports & Social Club, Old Towcester Road","addressLocality":"Northampton","postalCode":"NN4 8DG","addressCountry":"GB"}}
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
