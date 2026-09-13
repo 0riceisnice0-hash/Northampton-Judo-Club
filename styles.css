@@ -16,6 +16,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: calc(var(--rail-height) + 78px); }
 body { margin: 0; background: var(--cream); color: var(--ink); font: 16px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
