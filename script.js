@@ -23,21 +23,11 @@ if (menuButton && nav) {
 
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
-const filterButtons = document.querySelectorAll('[data-schedule-filter]');
-const scheduleRows = document.querySelectorAll('.session[data-class]');
-
-filterButtons.forEach(button => button.addEventListener('click', () => {
-  const selected = button.dataset.scheduleFilter;
-  filterButtons.forEach(item => item.classList.toggle('active', item === button));
-  scheduleRows.forEach(row => {
-    row.hidden = selected !== 'all' && row.dataset.class !== selected;
-  });
-  document.querySelectorAll('[data-day]').forEach(day => {
-    const visibleSessions = [...day.querySelectorAll('[data-class]')].filter(session => !session.hidden);
-    day.hidden = visibleSessions.length === 0;
-    const count = day.querySelector('header span');
-    if (count) count.textContent = `${visibleSessions.length} session${visibleSessions.length === 1 ? '' : 's'}`;
-  });
+const enquirySelect = document.querySelector('select[name="enquiry"]');
+document.querySelectorAll('[data-enquiry]').forEach(link => link.addEventListener('click', () => {
+  if (enquirySelect && [...enquirySelect.options].some(option => option.value === link.dataset.enquiry)) {
+    enquirySelect.value = link.dataset.enquiry;
+  }
 }));
 
 const priceTabs = document.querySelectorAll('[data-price-tab]');

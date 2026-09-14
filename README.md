@@ -20,6 +20,6 @@ In the repository settings, choose **Pages → Deploy from a branch**, then sele
 
 - `data/content.json` contains searchable text extracted from all 98 public source URLs.
 - `assets/archive/` contains 420 downloaded source asset records (419 usable files plus one malformed Squarespace video-template URL retained in the migration log outside this repository).
-- `archive.html` makes the complete source text and 403 unique media files searchable and browsable. The remaining downloaded files are duplicate Squarespace HTML-escaped URL variants.
+- The homepage includes a curated club gallery using preserved original photography.
 
 The main site curates the most useful content for prospective members while the archive preserves the long-form programmes, policies, history, gallery records and events.
