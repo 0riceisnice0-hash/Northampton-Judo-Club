@@ -46,7 +46,7 @@ priceTabs.forEach(tab => tab.addEventListener('click', () => {
   });
 }));
 
-const revealTargets = document.querySelectorAll('.class-card, .trial-card, .pricing-panel a, .coach-list article, .photo-reel figure, .start-steps li');
+const revealTargets = document.querySelectorAll('.class-card, .trial-card, .price-row, .coach-list article, .photo-reel figure, .start-steps li');
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   revealTargets.forEach(target => target.classList.add('reveal'));
   const observer = new IntersectionObserver(entries => {
