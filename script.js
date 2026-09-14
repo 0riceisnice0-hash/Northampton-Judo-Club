@@ -24,7 +24,7 @@ if (menuButton && nav) {
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
 const filterButtons = document.querySelectorAll('[data-schedule-filter]');
-const scheduleRows = document.querySelectorAll('.schedule-row[data-class]');
+const scheduleRows = document.querySelectorAll('.session[data-class]');
 
 filterButtons.forEach(button => button.addEventListener('click', () => {
   const selected = button.dataset.scheduleFilter;
@@ -32,9 +32,31 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
   scheduleRows.forEach(row => {
     row.hidden = selected !== 'all' && row.dataset.class !== selected;
   });
+  document.querySelectorAll('[data-day]').forEach(day => {
+    const visibleSessions = [...day.querySelectorAll('[data-class]')].filter(session => !session.hidden);
+    day.hidden = visibleSessions.length === 0;
+    const count = day.querySelector('header span');
+    if (count) count.textContent = `${visibleSessions.length} session${visibleSessions.length === 1 ? '' : 's'}`;
+  });
 }));
 
-const revealTargets = document.querySelectorAll('.class-card, .price-grid article, .coach-list article, .photo-reel figure, .start-steps li');
+const priceTabs = document.querySelectorAll('[data-price-tab]');
+const pricePanels = document.querySelectorAll('[data-price-panel]');
+priceTabs.forEach(tab => tab.addEventListener('click', () => {
+  const selected = tab.dataset.priceTab;
+  priceTabs.forEach(item => {
+    const active = item === tab;
+    item.classList.toggle('active', active);
+    item.setAttribute('aria-selected', String(active));
+  });
+  pricePanels.forEach(panel => {
+    const active = panel.dataset.pricePanel === selected;
+    panel.hidden = !active;
+    panel.classList.toggle('active', active);
+  });
+}));
+
+const revealTargets = document.querySelectorAll('.class-card, .trial-card, .pricing-panel a, .coach-list article, .photo-reel figure, .start-steps li');
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   revealTargets.forEach(target => target.classList.add('reveal'));
   const observer = new IntersectionObserver(entries => {
@@ -46,4 +68,17 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
     });
   }, { threshold: 0.12 });
   revealTargets.forEach(target => observer.observe(target));
+}
+
+const contactForm = document.querySelector('[data-formspree-form]');
+const formStatus = document.querySelector('[data-form-status]');
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener('submit', event => {
+    if (contactForm.action.includes('YOUR_FORM_ID')) {
+      event.preventDefault();
+      formStatus.innerHTML = 'The online form is being connected. For now, email <a href="mailto:action@northamptonjudo.com">action@northamptonjudo.com</a>.';
+      formStatus.classList.add('notice');
+    }
+  });
 }

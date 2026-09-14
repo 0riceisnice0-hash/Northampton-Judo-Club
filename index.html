@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260913-4">
+  <link rel="stylesheet" href="styles.css?v=20260914-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -122,10 +122,9 @@
       <div class="wrap timetable-layout">
         <div class="schedule-intro">
           <p class="eyebrow light">This week on the tatami</p>
-          <h2>Train around<br>your life.</h2>
-          <p>New starters are welcome in every regular class. Arrive a little early and introduce yourself to a coach.</p>
-          <a class="button white" href="https://buy.stripe.com/4gw6rh62e3tS1a0aEQ">Pay £10 for one adult class <span>→</span></a>
-          <small class="drop-in-note">One-off payment · not a monthly subscription</small>
+          <h2>Your week.<br>Your mat.</h2>
+          <p>New starters are welcome in every regular class. Pick a session, arrive a little early and introduce yourself to a coach.</p>
+          <div class="schedule-actions"><a class="button white" href="#contact">Start with a free week <span>→</span></a><a class="text-link light" href="#membership">View every payment option ↓</a></div>
         </div>
         <div class="schedule-wrap">
           <div class="schedule-filters" aria-label="Filter timetable">
@@ -134,44 +133,51 @@
             <button type="button" data-schedule-filter="adult">Adults</button>
             <button type="button" data-schedule-filter="bjj">BJJ</button>
           </div>
-        <div class="schedule" role="table" aria-label="Weekly class timetable">
-          <div class="schedule-row head" role="row"><span>Day</span><span>Time</span><span>Class</span></div>
-          <div class="schedule-row" data-class="junior" role="row"><strong>MON</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
-          <div class="schedule-row" data-class="adult" role="row"><strong>MON</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
-          <div class="schedule-row" data-class="bjj" role="row"><strong>TUE</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi & No-Gi</small></span></div>
-          <div class="schedule-row" data-class="junior" role="row"><strong>THU</strong><time>18:30–19:30</time><span><b>Junior judo</b><small>Ages 5+</small></span></div>
-          <div class="schedule-row" data-class="adult" role="row"><strong>THU</strong><time>19:30–21:30</time><span><b>Adult judo</b><small>Standing & groundwork</small></span></div>
-          <div class="schedule-row" data-class="adult" role="row"><strong>FRI</strong><time>18:00–19:00</time><span><b>Adult newaza</b><small>Judo groundwork</small></span></div>
-          <div class="schedule-row" data-class="bjj" role="row"><strong>FRI</strong><time>18:00–19:30</time><span><b>Origin BJJ</b><small>Gi</small></span></div>
-        </div>
+          <div class="schedule-days" aria-label="Weekly class timetable">
+            <article class="day-card" data-day><header><strong>MON</strong><span>2 sessions</span></header><div class="session" data-class="junior"><time>18:30</time><div><b>Junior judo</b><small>60 min · Ages 5+</small></div></div><div class="session" data-class="adult"><time>19:30</time><div><b>Adult judo</b><small>120 min · All levels</small></div></div></article>
+            <article class="day-card" data-day><header><strong>TUE</strong><span>1 session</span></header><div class="session" data-class="bjj"><time>18:00</time><div><b>Origin BJJ</b><small>90 min · Gi & No-Gi</small></div></div></article>
+            <article class="day-card" data-day><header><strong>THU</strong><span>2 sessions</span></header><div class="session" data-class="junior"><time>18:30</time><div><b>Junior judo</b><small>60 min · Ages 5+</small></div></div><div class="session" data-class="adult"><time>19:30</time><div><b>Adult judo</b><small>120 min · All levels</small></div></div></article>
+            <article class="day-card" data-day><header><strong>FRI</strong><span>2 sessions</span></header><div class="session" data-class="adult"><time>18:00</time><div><b>Adult newaza</b><small>60 min · Groundwork</small></div></div><div class="session" data-class="bjj"><time>18:00</time><div><b>Origin BJJ</b><small>90 min · Gi</small></div></div></article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section membership" id="membership">
       <div class="wrap">
-        <div class="section-heading"><p class="eyebrow">Straightforward pricing</p><h2>Free trial. Drop in. Or join.</h2><p>New to the club? Do not pay yet—your first week is free. The £10 checkout is only for an adult one-off class.</p></div>
-        <div class="payment-guide" aria-label="Ways to start training">
-          <article class="payment-free">
-            <span>New starter</span>
-            <strong>Free</strong>
-            <div><h3>Your first week</h3><p>Come and meet us before choosing a membership. No payment needed.</p></div>
-            <a href="mailto:action@northamptonjudo.com?subject=Free%20judo%20trial">Arrange a free trial →</a>
-          </article>
-          <article class="payment-dropin">
-            <span>One-off</span>
-            <strong>£10</strong>
-            <div><h3>One adult class</h3><p>A single paid adult session. This is not a monthly payment or subscription.</p></div>
-            <a href="https://buy.stripe.com/4gw6rh62e3tS1a0aEQ">Pay for one class →</a>
-          </article>
+        <div class="section-heading compact-heading"><p class="eyebrow">Every payment option</p><h2>Train your way.</h2><p>Your first week is free. After that, choose monthly training or pay for one class—every button below opens the correct Stripe checkout.</p></div>
+        <div class="pricing-shell">
+          <aside class="trial-card"><span>New here?</span><strong>£0</strong><h3>Your first week is free.</h3><p>Try the club before paying for anything. Tell us who would like to train and we’ll help choose the right session.</p><a href="#contact">Arrange your free week →</a></aside>
+          <div class="pricing-picker">
+            <div class="pricing-tabs" role="tablist" aria-label="Choose membership type">
+              <button class="active" type="button" role="tab" aria-selected="true" data-price-tab="adult">Adults</button>
+              <button type="button" role="tab" aria-selected="false" data-price-tab="junior">Juniors</button>
+              <button type="button" role="tab" aria-selected="false" data-price-tab="student">Students</button>
+              <button type="button" role="tab" aria-selected="false" data-price-tab="sibling">Siblings</button>
+            </div>
+            <div class="pricing-panel active" data-price-panel="adult">
+              <a href="https://buy.stripe.com/5kAcPF9eq1lK4mc5kr"><span><b>Gold</b><small>2 judo sessions each week</small></span><strong>£32<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/14k4j90HU4xW6uk006"><span><b>Silver</b><small>1 judo session each week</small></span><strong>£20<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/4gw6rh62e3tS1a0aEQ"><span><b>Drop-in</b><small>One adult class only</small></span><strong>£10<small>/class</small></strong><em>Pay once →</em></a>
+            </div>
+            <div class="pricing-panel" data-price-panel="junior" hidden>
+              <a href="https://buy.stripe.com/00g7vleyK1lKcSI8wU"><span><b>Gold</b><small>2 junior sessions each week</small></span><strong>£28<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/dR68zpaiu8Oc7yo6oN"><span><b>Silver</b><small>1 junior session each week</small></span><strong>£16<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/4gwaHxgGS6G47yo5kK"><span><b>Drop-in</b><small>One junior class only</small></span><strong>£8<small>/class</small></strong><em>Pay once →</em></a>
+            </div>
+            <div class="pricing-panel" data-price-panel="student" hidden>
+              <a href="https://buy.stripe.com/5kA16X4Yad4sf0Q9AJ"><span><b>Gold</b><small>2 judo sessions each week</small></span><strong>£28<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/9AQ8zpcqC8Oc8CscMU"><span><b>Silver</b><small>1 judo session each week</small></span><strong>£16<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="#contact"><span><b>Drop-in</b><small>The old checkout was unavailable</small></span><strong>£8<small>/class</small></strong><em>Ask us →</em></a>
+            </div>
+            <div class="pricing-panel" data-price-panel="sibling" hidden>
+              <a href="https://buy.stripe.com/00g02TgGS4xW5qgaEZ"><span><b>Gold</b><small>2 sessions each week</small></span><strong>£42<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/28o5ndbmyfcAf0Q00m"><span><b>Silver</b><small>1 session each week</small></span><strong>£24<small>/month</small></strong><em>Subscribe →</em></a>
+              <a href="https://buy.stripe.com/dR69DtbmyfcA9Gw28v"><span><b>Drop-in</b><small>Sibling single entry</small></span><strong>£12<small>/class</small></strong><em>Pay once →</em></a>
+            </div>
+          </div>
         </div>
-        <div class="monthly-heading"><span>Monthly memberships</span><p>For regular training after your free trial.</p></div>
-        <div class="price-grid">
-          <article><span class="price-tag">Juniors</span><p>from</p><strong>£16<small>/month</small></strong><ul><li>Gold, twice weekly · £28</li><li>Silver, once weekly · £16</li><li>Single class · £8</li></ul></article>
-          <article class="featured"><span class="price-tag">Adults</span><p>from</p><strong>£20<small>/month</small></strong><ul><li>Gold, twice weekly · £32</li><li>Silver, once weekly · £20</li><li>Single class · £10</li></ul></article>
-          <article><span class="price-tag">Students</span><p>from</p><strong>£16<small>/month</small></strong><ul><li>Gold, twice weekly · £28</li><li>Silver, once weekly · £16</li><li>Single class · £8</li></ul></article>
-        </div>
-        <p class="membership-note">British Judo Association membership is also required for insurance, grading and competition. Sibling memberships are available.</p>
+        <p class="membership-note">Club fees are paid through Stripe. <a href="https://www.britishjudo.org.uk/get-started/join-bja/">British Judo Association membership ↗</a> is separate and provides insurance, grading and competition eligibility.</p>
       </div>
     </section>
 
@@ -232,6 +238,17 @@
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div><p class="eyebrow light">Ready when you are</p><h2>Step onto<br>the mat.</h2><p>Your first week is completely free. Send us a message and a friendly coach will help you choose the right class.</p><a class="button red" href="mailto:action@northamptonjudo.com?subject=Free%20judo%20trial">Start your free week <span>→</span></a></div>
+        <!-- Replace YOUR_FORM_ID with the ID from the Formspree Integration screen. -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-formspree-form>
+          <div class="form-heading"><span>Send an enquiry</span><p>Tell us a little about who would like to train.</p></div>
+          <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+          <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+          <label><span>Phone <small>optional</small></span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label><span>I’m interested in</span><select name="enquiry" required><option value="">Choose one…</option><option>Free first week</option><option>Junior judo</option><option>Adult judo</option><option>Women’s judo</option><option>Finding Your Feet</option><option>Origin BJJ</option><option>Something else</option></select></label>
+          <label class="form-message"><span>Message</span><textarea name="message" rows="4" required placeholder="Questions, experience, participant age or anything we should know…"></textarea></label>
+          <input type="hidden" name="_subject" value="New Northampton Judo Club enquiry">
+          <div class="form-submit"><button type="submit">Send enquiry <span>→</span></button><p id="form-status" role="status" aria-live="polite" data-form-status></p></div>
+        </form>
         <address><span>Find us</span><strong>Carlsberg Sports & Social Club</strong><p>Old Towcester Road<br>Northampton<br>NN4 8DG</p><a href="https://www.google.com/maps/search/?api=1&query=Carlsberg+Sports+%26+Social+Club+Old+Towcester+Road+Northampton+NN4+8DG">Get directions ↗</a></address>
         <div class="contact-details"><span>Talk to us</span><a href="mailto:action@northamptonjudo.com">action@northamptonjudo.com</a><div class="socials"><a href="https://www.instagram.com/northamptonjudoclub/">Instagram</a><a href="https://www.facebook.com/Northamptonjudoclub/">Facebook</a><a href="https://www.youtube.com/@NorthamptonJudoClub">YouTube</a><a href="https://www.tiktok.com/@northamptonjudoclub">TikTok</a></div></div>
       </div>
@@ -245,6 +262,6 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SportsActivityLocation","name":"Northampton Judo Club","description":"Friendly judo coaching for juniors and adults in Northampton, established 1982.","url":"https://0riceisnice0-hash.github.io/Northampton-Judo-Club/","email":"action@northamptonjudo.com","address":{"@type":"PostalAddress","streetAddress":"Carlsberg Sports & Social Club, Old Towcester Road","addressLocality":"Northampton","postalCode":"NN4 8DG","addressCountry":"GB"}}
   </script>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260914-2"></script>
 </body>
 </html>
