@@ -433,12 +433,14 @@ h1 { max-width: 900px; font-size: clamp(86px, 10.8vw, 166px); }
 
 .timetable-section { position: relative; overflow: hidden; background: #07111f; }
 .timetable-section::before { content: "時間割"; position: absolute; right: -20px; bottom: -55px; color: transparent; opacity: .08; font: 800 180px/1 serif; -webkit-text-stroke: 1px white; pointer-events: none; }
-.schedule-days { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 34px; }
+.schedule-days { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 34px; }
 .day-card { position: relative; min-width: 0; min-height: 285px; overflow: hidden; padding: 25px 25px 15px; border: 1px solid rgb(255 255 255 / .17); border-top: 4px solid var(--red); background: linear-gradient(145deg, rgb(255 255 255 / .09), rgb(255 255 255 / .025)); transition: transform .25s ease, border-color .25s ease; }
 .day-card:nth-child(2) { border-top-color: #7aa0ff; transform: translateY(14px); }
 .day-card:nth-child(3) { border-top-color: white; }
+.day-card:nth-child(4) { border-top-color: var(--red); transform: translateY(14px); }
 .day-card:hover { z-index: 2; transform: translateY(-5px); border-color: rgb(255 255 255 / .48); }
 .day-card:nth-child(2):hover { transform: translateY(5px); }
+.day-card:nth-child(4):hover { transform: translateY(5px); }
 .day-card::before { content: attr(data-index); position: absolute; right: 15px; bottom: -24px; color: white; opacity: .035; font: 800 150px/1 var(--display); }
 .day-card header { position: relative; display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 20px; }
 .day-card header::after { content: ""; position: absolute; inset: auto 0 0; width: 36px; height: 2px; background: var(--red); }
@@ -496,7 +498,7 @@ h1 { max-width: 900px; font-size: clamp(86px, 10.8vw, 166px); }
   .schedule-intro { grid-template-columns: 1fr; gap: 20px; }
   .schedule-intro h2 { white-space: normal; }
   .schedule-days { grid-template-columns: 1fr 1fr; }
-  .day-card:nth-child(2) { transform: none; }
+  .day-card:nth-child(2), .day-card:nth-child(4) { transform: none; }
   .contact-intro { display: block; }
   .contact-intro > p:not(.eyebrow) { margin: 20px 0; }
   .contact h2 { white-space: normal; }
