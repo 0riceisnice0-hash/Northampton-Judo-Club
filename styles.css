@@ -208,7 +208,8 @@ h1 span { color: transparent; -webkit-text-stroke: 2px white; }
 .coach-list article { grid-column: span 2; display: grid; gap: 3px; padding: 17px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; }
 .coach-list b { font: 600 25px var(--display); text-transform: uppercase; }
 .coach-list span { color: var(--muted); font-size: 11px; }
-.coach-list .coach-profile { grid-column: span 3; gap: 7px; padding: 22px 26px; background: var(--blue-light); }
+.coach-list .coach-profile { grid-column: span 3; align-content: start; gap: 7px; min-height: 172px; padding: 22px 26px; }
+.coach-list .coach-profile:nth-child(4n + 3), .coach-list .coach-profile:nth-child(4n + 4) { background: var(--blue-light); }
 .coach-profile p { max-width: 520px; margin: 5px 0 0; color: #4f5b6a; font-size: 11px; line-height: 1.55; }
 
 .testimonial { padding: 90px 0; background: var(--cream); }
