@@ -208,9 +208,21 @@ h1 span { color: transparent; -webkit-text-stroke: 2px white; }
 .coach-list article { grid-column: span 2; display: grid; gap: 3px; padding: 17px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: white; }
 .coach-list b { font: 600 25px var(--display); text-transform: uppercase; }
 .coach-list span { color: var(--muted); font-size: 11px; }
-.coach-list .coach-profile { grid-column: span 3; align-content: start; gap: 7px; min-height: 172px; padding: 22px 26px; }
+.coach-list .coach-profile { position: relative; grid-column: span 3; align-content: start; gap: 7px; min-height: 196px; padding: 22px 26px 48px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
 .coach-list .coach-profile:nth-child(4n + 3), .coach-list .coach-profile:nth-child(4n + 4) { background: var(--blue-light); }
 .coach-profile p { max-width: 520px; margin: 5px 0 0; color: #4f5b6a; font-size: 11px; line-height: 1.55; }
+.coach-list .coach-profile:hover, .coach-list .coach-profile:focus-visible { z-index: 1; background: white; box-shadow: 0 18px 40px rgb(7 17 31 / .13); outline: 2px solid var(--blue); outline-offset: -2px; transform: translateY(-3px); }
+.coach-list .profile-cue { position: absolute; right: 26px; bottom: 20px; left: 26px; color: var(--blue); font-size: 8px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+body.dialog-open { overflow: hidden; }
+.coach-dialog { width: min(760px, calc(100% - 32px)); max-height: min(820px, calc(100dvh - 32px)); padding: 0; border: 0; color: var(--ink); background: transparent; }
+.coach-dialog::backdrop { background: rgb(3 9 18 / .84); backdrop-filter: blur(7px); }
+.coach-dialog-panel { position: relative; overflow-y: auto; max-height: min(820px, calc(100dvh - 32px)); padding: 48px 54px 52px; border-top: 5px solid var(--red); background: var(--cream); box-shadow: 0 30px 80px rgb(0 0 0 / .35); }
+.coach-dialog-close { position: absolute; top: 18px; right: 20px; min-height: 36px; padding: 7px 10px; border: 1px solid var(--line); color: var(--ink); background: transparent; font: 800 9px var(--body); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.coach-dialog-close:hover, .coach-dialog-close:focus-visible { border-color: var(--red); color: var(--red); }
+.coach-dialog h3 { margin: 7px 0 4px; font: 600 clamp(48px, 8vw, 76px)/.92 var(--display); text-transform: uppercase; }
+.coach-dialog-meta { margin: 0 0 28px; color: var(--blue); font-size: 11px; font-weight: 700; }
+.coach-dialog-copy { display: grid; gap: 16px; padding-top: 26px; border-top: 1px solid var(--line); }
+.coach-dialog-copy p { max-width: 650px; margin: 0; color: #455263; font-size: 14px; line-height: 1.75; }
 
 .testimonial { padding: 90px 0; background: var(--cream); }
 .quote-wrap { text-align: center; }
@@ -551,6 +563,10 @@ h1 { max-width: 900px; font-size: clamp(86px, 10.8vw, 166px); }
   .schedule-footer .button { width: 100%; }
   .course-schedule article { grid-template-columns: 1fr; gap: 5px; padding: 17px; }
   .course-schedule a { margin-top: 7px; }
+  .coach-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .coach-dialog-panel { max-height: calc(100dvh - 20px); padding: 52px 23px 32px; }
+  .coach-dialog h3 { font-size: 46px; }
+  .coach-dialog-copy p { font-size: 13px; line-height: 1.65; }
   .compact-heading h2, .split-heading h2, .contact h2 { font-size: 50px; white-space: normal; }
   .pricing-shell { margin-inline: -1px; }
   .pricing-tabs { display: grid; grid-template-columns: .8fr 1.35fr 1fr; }

@@ -46,6 +46,42 @@ priceTabs.forEach(tab => tab.addEventListener('click', () => {
   });
 }));
 
+const coachDialog = document.querySelector('[data-coach-dialog]');
+const coachCards = document.querySelectorAll('[data-profile]');
+
+if (coachDialog && coachCards.length) {
+  const title = coachDialog.querySelector('[data-coach-title]');
+  const meta = coachDialog.querySelector('[data-coach-meta]');
+  const copy = coachDialog.querySelector('[data-coach-copy]');
+  const closeButton = coachDialog.querySelector('[data-coach-close]');
+
+  const openProfile = card => {
+    const template = document.querySelector(`#bio-${card.dataset.profile}`);
+    if (!template) return;
+    title.textContent = card.querySelector('b').textContent;
+    meta.textContent = card.querySelector('span:not(.profile-cue)').textContent;
+    copy.replaceChildren(template.content.cloneNode(true));
+    coachDialog.showModal();
+    document.body.classList.add('dialog-open');
+  };
+
+  coachCards.forEach(card => {
+    card.addEventListener('click', () => openProfile(card));
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openProfile(card);
+      }
+    });
+  });
+
+  closeButton.addEventListener('click', () => coachDialog.close());
+  coachDialog.addEventListener('click', event => {
+    if (event.target === coachDialog) coachDialog.close();
+  });
+  coachDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
+}
+
 const revealTargets = document.querySelectorAll('.class-card, .trial-card, .price-row, .coach-list article, .photo-reel figure, .start-steps li');
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   revealTargets.forEach(target => target.classList.add('reveal'));
